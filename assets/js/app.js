@@ -24,17 +24,18 @@ import "vueify/lib/insert-css"
 'use strict';
 
 import Vue from 'vue'
-import MyApp from "./components/my-app.vue"
+import Messages from "./components/messages.vue"
 
 
 new Vue({
   el: '#app',
   components: {
-    MyApp
+    Messages
   },
   data() {
     return {
-
+      channel: null,
+      messages: []
     }
   }
 });

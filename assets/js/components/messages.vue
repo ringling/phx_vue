@@ -1,7 +1,9 @@
 <template>
-  <div class="my-app">
-    <h1>My Awesome App</h1>
-    {{message}}
+  <div class="messages">
+    <h2>Messages</h2>
+    <ul v-for="message in messages">
+      <li>{{message}}</li>
+    </ul>
   </div>
 </template>
 
@@ -18,7 +20,7 @@
 
 
 export default {
-  props: ['message'],
+  props: ['messages'],
 
   // If you reference other components, then you must also list them
   // in the components map. e.g:
@@ -30,7 +32,7 @@ export default {
 </script>
 
 <style lang="sass">
-.my-app {
+.messages {
   margin-left: auto;
   margin-right: auto;
 
