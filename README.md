@@ -1,5 +1,10 @@
 # PhxVue
 
+
+Vue.js 2 and Phoenix 1.3 demo app
+
+
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
