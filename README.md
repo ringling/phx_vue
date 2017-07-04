@@ -4,6 +4,8 @@
 Vue.js 2 and Phoenix 1.3 demo app
 
 
+PhxVue.Web.Endpoint.broadcast "room:lobby", "new_msg", %{body: "Hello from console"}
+
 
 To start your Phoenix server:
 

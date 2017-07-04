@@ -13,13 +13,13 @@
 // to also remove its path from "config.paths.watched".
 import "phoenix_html"
 import "vueify/lib/insert-css"
+import socket from "./socket"
 
 // Import local files
 //
 // Local files can be imported directly using relative
 // paths "./socket" or full ones "web/static/js/socket".
 
-// import socket from "./socket"
 
 'use strict';
 
@@ -37,5 +37,15 @@ new Vue({
       channel: null,
       messages: []
     }
-  }
+  },
+  mounted() {
+    this.channel = socket.channel("room:lobby", {});
+    this.channel.on("new_msg", payload => {
+      payload.received_at = Date();
+      this.messages.push(payload);
+    });
+    this.channel.join()
+      .receive("ok", response => { console.log("Joined successfully", response) })
+      .receive("error", response => { console.log("Unable to join", response) })
+  },
 });
