@@ -1,3 +1,4 @@
+'use strict';
 // Brunch automatically concatenates all files in your
 // watched paths. Those paths can be configured at
 // config.paths.watched in "brunch-config.js".
@@ -21,8 +22,6 @@ import socket from "./socket"
 // paths "./socket" or full ones "web/static/js/socket".
 
 
-'use strict';
-
 import Vue from 'vue'
 import Messages from "./components/messages.vue"
 
@@ -39,7 +38,7 @@ new Vue({
     }
   },
   mounted() {
-    this.channel = socket.channel("room:lobby", {});
+    this.channel = socket.channel("worker:all", {});
     this.channel.on("new_msg", payload => {
       payload.received_at = Date();
       this.messages.push(payload);

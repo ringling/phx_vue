@@ -1,11 +1,11 @@
-defmodule PhxVue.Web.RoomChannel do
+defmodule PhxVue.Web.WorkerChannel do
   use PhxVue.Web, :channel
 
-  def join("room:lobby", payload, socket) do
+  def join("worker:all", payload, socket) do
     {:ok, socket}
   end
 
-  def join("room:" <> _private_room_id, _params, _socket) do
+  def join("worker:" <> _private_room_id, _params, _socket) do
     {:error, %{reason: "Unauthorized"}}
   end
 

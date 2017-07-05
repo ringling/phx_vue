@@ -2,7 +2,7 @@ defmodule PhxVue.Web.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  channel "room:*", PhxVue.Web.RoomChannel
+  channel "worker:*", PhxVue.Web.WorkerChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
