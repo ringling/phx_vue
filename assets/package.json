@@ -10,7 +10,8 @@
     "phoenix_html": "file:../deps/phoenix_html",
     "vue": "^2.3.4",
     "vue-brunch": "^2.0.1",
-    "vue-loader": "^13.0.0"
+    "vue-loader": "^13.0.0",
+    "vuex": "^2.3.1"
   },
   "devDependencies": {
     "node-sass": "^4.5.3",

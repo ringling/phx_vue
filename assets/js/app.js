@@ -23,11 +23,26 @@ import socket from "./socket"
 
 
 import Vue from 'vue'
+//import Vuex from 'vuex'
 import Messages from "./components/messages.vue"
 
+// Vue.use(Vuex)
+
+// const store = new Vuex.Store({
+//   state: {
+//     messages: []
+//   },
+
+//   mutations: {
+//     addMessage (state, message) {
+//       store.state.messages.push(message)
+//     }
+//   }
+// })
 
 new Vue({
   el: '#app',
+  //store,
   components: {
     Messages
   },
@@ -42,6 +57,7 @@ new Vue({
     this.channel.on("new_msg", payload => {
       payload.received_at = Date();
       this.messages.push(payload);
+      //this.$store.commit('addMessage', payload)
     });
     this.channel.join()
       .receive("ok", response => { console.log("Joined successfully", response) })
