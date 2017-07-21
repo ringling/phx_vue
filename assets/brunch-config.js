@@ -20,12 +20,16 @@ exports.config = {
       // }
     },
     stylesheets: {
-      joinTo: "css/app.css"
+      joinTo: "css/app.css",
+      order: {
+        after: ["css/app.css"] // concat app.css last
+      }
     },
     templates: {
       joinTo: "js/app.js"
     }
   },
+
 
   conventions: {
     // This option sets where we should place non-css and non-js assets in.
@@ -64,6 +68,9 @@ exports.config = {
     enabled: true,
     aliases: {
       vue: 'vue/dist/vue.js'
+    },
+    styles: {
+      vuetify: ['dist/vuetify.min.css']
     }
   }
 };

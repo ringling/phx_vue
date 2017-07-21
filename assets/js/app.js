@@ -23,22 +23,24 @@ import socket from "./socket"
 
 
 import Vue from 'vue'
-//import Vuex from 'vuex'
-import Messages from "./components/messages.vue"
+import Vuex from 'vuex'
+import Vuetify from 'vuetify'
+import Messages from "./components/Messages.vue"
 
-// Vue.use(Vuex)
+Vue.use(Vuetify)
+Vue.use(Vuex)
 
-// const store = new Vuex.Store({
-//   state: {
-//     messages: []
-//   },
+const store = new Vuex.Store({
+  state: {
+    messages: []
+  },
 
-//   mutations: {
-//     addMessage (state, message) {
-//       store.state.messages.push(message)
-//     }
-//   }
-// })
+  mutations: {
+    addMessage (state, message) {
+      store.state.messages.push(message)
+    }
+  }
+})
 
 new Vue({
   el: '#app',
